@@ -2,6 +2,10 @@ package br.calebe.ticketmachine.core;
 
 import br.calebe.ticketmachine.exception.PapelMoedaInvalidaException;
 import br.calebe.ticketmachine.exception.SaldoInsuficienteException;
+import br.calebe.ticketmachine.core.Troco;
+import br.calebe.ticketmachine.core.Troco.TrocoIterator;
+
+
 import java.util.Iterator;
 
 /**
@@ -13,10 +17,10 @@ public class TicketMachine {
     /*Não há atributos na classe TicketMachine de acordo com a documentação*/
     protected int precoDoBilhete;
     protected int saldo;
-    protected int[] papelMoeda = {2, 5, 10, 20, 50, 100, 200};
+    protected int[] papelMoeda = {2, 5, 10, 20, 50, 100, 200}; //Falta nota de 200
 
-    public TicketMachine(int precoDoBilhete) {
-        this.precoDoBilhete = precoDoBilhete;
+    public TicketMachine(int precoDoBilhete) { // nome valor deveria ser precoDoBilhete
+        this.precoDoBilhete = precoDoBilhete; 
         this.saldo = 0;
     }
 
@@ -37,8 +41,11 @@ public class TicketMachine {
         return saldo;
     }
 
-    public Iterator<Integer> getTroco() {
-        return null;
+    //A função getTroco deveria retornar um TrocoIterator
+    public TrocoIterator getTroco() {
+        TrocoIterator trocoIterator = new TrocoIterator(new Troco(this.getSaldo()));
+        this.saldo = 0;
+        return trocoIterator;
     }
 
     /*Em nenhum ponto da documentação é definido o que essa função deveria imprimir*/
