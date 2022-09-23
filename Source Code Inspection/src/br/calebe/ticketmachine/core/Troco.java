@@ -58,8 +58,9 @@ public class Troco {
         
         count = 0;
         /*Loop sem condição de saída*/
-        while (valor % 2 != 0) {
+        while (valor / 2 >= 1) {
             count++;
+            valor = valor - 2;
         }
         /*Sobrescreve o index do PapelMoeda de valor 5*/
         papeisMoeda[1] = new PapelMoeda(2, count);
