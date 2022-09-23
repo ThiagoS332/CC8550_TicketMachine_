@@ -10,6 +10,7 @@ import java.util.Iterator;
  */
 public class TicketMachine {
 
+    /*Não há atributos na classe TicketMachine de acordo com a documentação*/
     protected int valor;
     protected int saldo;
     protected int[] papelMoeda = {2, 5, 10, 20, 50, 100};
@@ -22,8 +23,8 @@ public class TicketMachine {
     public void inserir(int quantia) throws PapelMoedaInvalidaException {
         boolean achou = false;
         for (int i = 0; i < papelMoeda.length && !achou; i++) {
-            if (papelMoeda[i] == quantia) {
-                achou = true;
+            if (papelMoeda[i] == quantia) { /*Nessa condição está sendo utilizado um valor fixo na lista papelMoeda*/
+                achou = true;               /*Porém deveria ser utilizado a variavel i, que é o iterador */
             }
         }
         if (!achou) {
@@ -40,6 +41,8 @@ public class TicketMachine {
         return null;
     }
 
+    /*Em nenhum ponto da documentação é definido o que essa função deveria imprimir*/
+    /*Devido a isso é difícil dizer o que exatamente está errado*/
     public String imprimir() throws SaldoInsuficienteException {
         if (saldo < valor) {
             throw new SaldoInsuficienteException();
