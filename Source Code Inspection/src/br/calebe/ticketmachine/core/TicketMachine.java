@@ -13,7 +13,7 @@ public class TicketMachine {
     /*Não há atributos na classe TicketMachine de acordo com a documentação*/
     protected int precoDoBilhete;
     protected int saldo;
-    protected int[] papelMoeda = {2, 5, 10, 20, 50, 100};
+    protected int[] papelMoeda = {2, 5, 10, 20, 50, 100, 200};
 
     public TicketMachine(int precoDoBilhete) {
         this.precoDoBilhete = precoDoBilhete;
