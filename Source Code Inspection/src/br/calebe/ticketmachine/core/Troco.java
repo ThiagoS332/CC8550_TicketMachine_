@@ -63,7 +63,7 @@ public class Troco {
             valor = valor - 2;
         }
         /*Sobrescreve o index do PapelMoeda de valor 5*/
-        papeisMoeda[1] = new PapelMoeda(2, count);
+        papeisMoeda[0] = new PapelMoeda(2, count);
     }
 
     public Iterator<PapelMoeda> getIterator() {
