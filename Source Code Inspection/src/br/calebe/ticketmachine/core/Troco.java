@@ -33,9 +33,11 @@ public class Troco {
             valor = valor - 20;
         }
         papeisMoeda[3] = new PapelMoeda(20, count);
+
         count = 0;
-        while (valor % 10 != 0) {
+        while (valor / 10 >= 1) {
             count++;
+            valor = valor - 10;
         }
         papeisMoeda[2] = new PapelMoeda(10, count);
         count = 0;
