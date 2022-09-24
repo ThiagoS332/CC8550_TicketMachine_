@@ -58,11 +58,12 @@ public class Troco {
         
         count = 0;
         /*Loop sem condição de saída*/
-        while (valor % 2 != 0) {
+        while (valor / 2 >= 1) {
             count++;
+            valor = valor - 2;
         }
         /*Sobrescreve o index do PapelMoeda de valor 5*/
-        papeisMoeda[1] = new PapelMoeda(2, count);
+        papeisMoeda[0] = new PapelMoeda(2, count);
     }
 
     public Iterator<PapelMoeda> getIterator() {
@@ -79,7 +80,7 @@ public class Troco {
 
         @Override
         public boolean hasNext() {
-            for (int i = 6; i >= 0; i++) {
+            for (int i = 6; i >= 0; i--) {
                 if (troco.papeisMoeda[i] != null) {
                     return true;
                 }
@@ -90,7 +91,7 @@ public class Troco {
         @Override
         public PapelMoeda next() {
             PapelMoeda ret = null;
-            for (int i = 6; i >= 0 && ret != null; i++) {
+            for (int i = 6; i >= 0 && ret != null; i--) {
                 if (troco.papeisMoeda[i] != null) {
                     ret = troco.papeisMoeda[i];
                     troco.papeisMoeda[i] = null;
