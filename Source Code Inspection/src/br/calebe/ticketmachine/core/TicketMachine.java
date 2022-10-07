@@ -37,6 +37,10 @@ public class TicketMachine {
         this.saldo += quantia;
     }
 
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
     public int getSaldo() {
         return saldo;
     }
